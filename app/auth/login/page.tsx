@@ -30,19 +30,19 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4">
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
       <div className="max-w-md w-full">
         <div className="mb-8">
           <Link href="/" className="inline-flex items-center text-blue-600 hover:text-blue-700">
             <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to BookingHub
+            Back to EasyBooking
           </Link>
         </div>
 
         <Card>
           <CardHeader className="text-center">
             <CardTitle className="text-2xl">Welcome back</CardTitle>
-            <CardDescription>Sign in to your BookingHub account</CardDescription>
+            <CardDescription>Sign in to your EasyBooking account</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
             <form onSubmit={handleSubmit} className="space-y-4">

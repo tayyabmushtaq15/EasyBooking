@@ -115,7 +115,7 @@ export default function SearchPage() {
           <div className="flex items-center justify-between">
             <Link href="/" className="inline-flex items-center text-blue-600 hover:text-blue-700">
               <ArrowLeft className="h-4 w-4 mr-2" />
-              BookingHub
+              EasyBooking
             </Link>
             <div className="flex items-center space-x-4">
               <Button variant="ghost">USD</Button>

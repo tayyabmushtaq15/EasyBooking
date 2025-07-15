@@ -42,7 +42,7 @@ export default function RegisterPage() {
         <div className="mb-8">
           <Link href="/" className="inline-flex items-center text-blue-600 hover:text-blue-700">
             <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to BookingHub
+            Back to EasyBooking
           </Link>
         </div>
 

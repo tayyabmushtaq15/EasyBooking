@@ -118,7 +118,7 @@ export default function VendorDashboard() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <Link href="/" className="text-2xl font-bold text-blue-600">
-                BookingHub
+                EasyBooking
               </Link>
               <Badge variant="secondary">Vendor Dashboard</Badge>
             </div>

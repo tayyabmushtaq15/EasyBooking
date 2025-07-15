@@ -286,7 +286,7 @@ export default function BookingPage({ params }: { params: { id: string } }) {
                     <div className="flex items-start space-x-2">
                       <Checkbox id="marketing" />
                       <Label htmlFor="marketing" className="text-sm">
-                        Send me marketing emails about BookingHub's products and services
+                        Send me marketing emails about EasyBooking's products and services
                       </Label>
                     </div>
                   </div>

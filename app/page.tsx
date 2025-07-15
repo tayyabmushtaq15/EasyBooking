@@ -85,9 +85,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen">
-
       {/* Main Content */}
-
       {/* Hero Section */}
       <section className="bg-blue-600 text-white py-8 sm:py-12 lg:py-16">
         <div className="container mx-auto px-4">
@@ -275,7 +273,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             <div className="sm:col-span-2 lg:col-span-1">
-              <h3 className="text-lg font-semibold mb-4">BookingHub</h3>
+              <h3 className="text-lg font-semibold mb-4">EasyBooking</h3>
               <p className="text-gray-400 text-sm sm:text-base">
                 Your trusted travel companion for finding the perfect accommodation worldwide.
               </p>
@@ -342,7 +340,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="border-t border-gray-800 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center text-gray-400 text-sm">
-            <p>&copy; 2024 BookingHub. All rights reserved.</p>
+            <p>&copy; 2024 EasyBooking. All rights reserved.</p>
           </div>
         </div>
       </footer>

@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
-import Header from "@/components/layout/header";  // Import Header component
+import type { Metadata } from "next"; 
+import Header from "@/components/layout/header";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -15,10 +15,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        {/* The Header is now part of the layout, rendering on all pages */}
+      <body>    
         <Header />
-        {/* Main content */}
         <main>{children}</main>
       </body>
     </html>

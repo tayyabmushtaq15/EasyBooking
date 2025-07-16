@@ -114,7 +114,7 @@ export default function VendorDashboard() {
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <header className="bg-white border-b">
-        <div className="container mx-auto px-4 py-4">
+        <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <Link href="/" className="text-2xl font-bold text-blue-600">
@@ -136,15 +136,15 @@ export default function VendorDashboard() {
         </div>
       </header>
 
-      <div className="container mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto px-4 py-12">
         {/* Welcome Section */}
-        <div className="mb-8">
+        <div className="mb-12">
           <h1 className="text-3xl font-bold mb-2">Welcome back, Sarah!</h1>
           <p className="text-gray-600">Here's what's happening with your properties</p>
         </div>
 
         {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <Card>
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
@@ -199,7 +199,7 @@ export default function VendorDashboard() {
         </div>
 
         {/* Main Content Tabs */}
-        <Tabs defaultValue="properties" className="space-y-6">
+        <Tabs defaultValue="properties" className="space-y-10">
           <TabsList className="grid w-full grid-cols-4">
             <TabsTrigger value="properties">Properties</TabsTrigger>
             <TabsTrigger value="bookings">Bookings</TabsTrigger>
@@ -208,16 +208,16 @@ export default function VendorDashboard() {
           </TabsList>
 
           {/* Properties Tab */}
-          <TabsContent value="properties" className="space-y-6">
+          <TabsContent value="properties" className="space-y-8">
             <div className="flex items-center justify-between">
               <h2 className="text-2xl font-bold">Your Properties</h2>
-              <Button className="bg-blue-600 hover:bg-blue-700">
+              <Button className="bg-blue-600 hover:bg-blue-700 rounded-md">
                 <Plus className="h-4 w-4 mr-2" />
                 Add New Property
               </Button>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {properties.map((property) => (
                 <Card key={property.id} className="overflow-hidden">
                   <div className="relative h-48">
@@ -279,7 +279,7 @@ export default function VendorDashboard() {
           </TabsContent>
 
           {/* Bookings Tab */}
-          <TabsContent value="bookings" className="space-y-6">
+          <TabsContent value="bookings" className="space-y-8">
             <div className="flex items-center justify-between">
               <h2 className="text-2xl font-bold">Recent Bookings</h2>
               <Select value={selectedPeriod} onValueChange={setSelectedPeriod}>
@@ -338,7 +338,7 @@ export default function VendorDashboard() {
           </TabsContent>
 
           {/* Messages Tab */}
-          <TabsContent value="messages" className="space-y-6">
+          <TabsContent value="messages" className="space-y-8">
             <h2 className="text-2xl font-bold">Messages</h2>
 
             <div className="space-y-4">
@@ -377,10 +377,10 @@ export default function VendorDashboard() {
           </TabsContent>
 
           {/* Analytics Tab */}
-          <TabsContent value="analytics" className="space-y-6">
+          <TabsContent value="analytics" className="space-y-8">
             <h2 className="text-2xl font-bold">Analytics</h2>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <Card>
                 <CardHeader>
                   <CardTitle>Revenue Trend</CardTitle>

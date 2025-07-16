@@ -77,7 +77,7 @@ export default function BookingPage({ params }: { params: { id: string } }) {
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <header className="bg-white border-b">
-        <div className="container mx-auto px-4 py-4">
+        <div className="max-w-7xl mx-auto px-4 py-4">
           <Link href={`/property/${params.id}`} className="inline-flex items-center text-blue-600 hover:text-blue-700">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to property
@@ -85,13 +85,13 @@ export default function BookingPage({ params }: { params: { id: string } }) {
         </div>
       </header>
 
-      <div className="container mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-3xl font-bold mb-8">Confirm and pay</h1>
+          <h1 className="text-3xl font-bold mb-10">Confirm and pay</h1>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Booking Form */}
-            <div className="space-y-6">
+            <div className="space-y-8">
               {/* Trip Details */}
               <Card>
                 <CardHeader>
@@ -128,7 +128,7 @@ export default function BookingPage({ params }: { params: { id: string } }) {
                   <CardTitle>Guest information</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <form className="space-y-4">
+                  <form className="space-y-6">
                     <div className="grid grid-cols-2 gap-4">
                       <div>
                         <Label htmlFor="firstName">First name</Label>
@@ -294,13 +294,13 @@ export default function BookingPage({ params }: { params: { id: string } }) {
               </Card>
 
               {/* Submit Button */}
-              <Button onClick={handleSubmit} className="w-full bg-blue-600 hover:bg-blue-700 h-12 text-lg">
+              <Button onClick={handleSubmit} className="w-full bg-blue-600 hover:bg-blue-700 h-12 text-lg rounded-md shadow-md">
                 Confirm and pay
               </Button>
             </div>
 
             {/* Booking Summary */}
-            <div className="space-y-6">
+            <div className="space-y-8">
               {/* Property Card */}
               <Card>
                 <CardContent className="p-6">

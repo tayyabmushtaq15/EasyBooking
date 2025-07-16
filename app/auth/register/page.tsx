@@ -38,7 +38,7 @@ export default function RegisterPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4">
-      <div className="max-w-md w-full">
+      <div className="max-w-md w-full mx-auto">
         <div className="mb-8">
           <Link href="/" className="inline-flex items-center text-blue-600 hover:text-blue-700">
             <ArrowLeft className="h-4 w-4 mr-2" />
@@ -46,19 +46,19 @@ export default function RegisterPage() {
           </Link>
         </div>
 
-        <Card>
+        <Card className="shadow-lg rounded-xl">
           <CardHeader className="text-center">
             <CardTitle className="text-2xl">Create your account</CardTitle>
             <CardDescription>Join thousands of travelers and property owners</CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6">
+          <CardContent className="space-y-8">
             {/* User Type Selection */}
             <div>
               <Label className="text-base font-medium">I want to:</Label>
               <RadioGroup
                 value={userType}
                 onValueChange={(value) => setUserType(value as "client" | "vendor")}
-                className="mt-2"
+                className="mt-2 flex flex-col gap-2"
               >
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="client" id="client" />
@@ -74,17 +74,17 @@ export default function RegisterPage() {
             <Separator />
 
             {/* Registration Form */}
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor="firstName">First Name</Label>
                   <div className="relative">
-                    <User className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                    <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
                     <Input
                       id="firstName"
                       type="text"
                       placeholder="John"
-                      className="pl-10"
+                      className="pl-10 h-12 rounded-md"
                       value={formData.firstName}
                       onChange={(e) => handleInputChange("firstName", e.target.value)}
                       required
@@ -94,12 +94,12 @@ export default function RegisterPage() {
                 <div>
                   <Label htmlFor="lastName">Last Name</Label>
                   <div className="relative">
-                    <User className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                    <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
                     <Input
                       id="lastName"
                       type="text"
                       placeholder="Doe"
-                      className="pl-10"
+                      className="pl-10 h-12 rounded-md"
                       value={formData.lastName}
                       onChange={(e) => handleInputChange("lastName", e.target.value)}
                       required
@@ -111,12 +111,12 @@ export default function RegisterPage() {
               <div>
                 <Label htmlFor="email">Email</Label>
                 <div className="relative">
-                  <Mail className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
                   <Input
                     id="email"
                     type="email"
                     placeholder="john@example.com"
-                    className="pl-10"
+                    className="pl-10 h-12 rounded-md"
                     value={formData.email}
                     onChange={(e) => handleInputChange("email", e.target.value)}
                     required
@@ -127,12 +127,12 @@ export default function RegisterPage() {
               <div>
                 <Label htmlFor="phone">Phone Number</Label>
                 <div className="relative">
-                  <Phone className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                  <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
                   <Input
                     id="phone"
                     type="tel"
                     placeholder="+1 (555) 123-4567"
-                    className="pl-10"
+                    className="pl-10 h-12 rounded-md"
                     value={formData.phone}
                     onChange={(e) => handleInputChange("phone", e.target.value)}
                     required
@@ -143,12 +143,12 @@ export default function RegisterPage() {
               <div>
                 <Label htmlFor="password">Password</Label>
                 <div className="relative">
-                  <Lock className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
                   <Input
                     id="password"
                     type="password"
                     placeholder="••••••••"
-                    className="pl-10"
+                    className="pl-10 h-12 rounded-md"
                     value={formData.password}
                     onChange={(e) => handleInputChange("password", e.target.value)}
                     required
@@ -159,12 +159,12 @@ export default function RegisterPage() {
               <div>
                 <Label htmlFor="confirmPassword">Confirm Password</Label>
                 <div className="relative">
-                  <Lock className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
                   <Input
                     id="confirmPassword"
                     type="password"
                     placeholder="••••••••"
-                    className="pl-10"
+                    className="pl-10 h-12 rounded-md"
                     value={formData.confirmPassword}
                     onChange={(e) => handleInputChange("confirmPassword", e.target.value)}
                     required
@@ -203,7 +203,7 @@ export default function RegisterPage() {
                 </div>
               </div>
 
-              <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700" disabled={!formData.agreeToTerms}>
+              <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 h-12 text-lg rounded-md shadow-md" disabled={!formData.agreeToTerms}>
                 Create Account
               </Button>
             </form>
@@ -218,7 +218,7 @@ export default function RegisterPage() {
             </div>
 
             <div className="grid grid-cols-2 gap-4">
-              <Button variant="outline" className="w-full">
+              <Button variant="outline" className="w-full h-12 rounded-md">
                 <svg className="mr-2 h-4 w-4" viewBox="0 0 24 24">
                   <path
                     d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -239,7 +239,7 @@ export default function RegisterPage() {
                 </svg>
                 Google
               </Button>
-              <Button variant="outline" className="w-full">
+              <Button variant="outline" className="w-full h-12 rounded-md">
                 <svg className="mr-2 h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                 </svg>

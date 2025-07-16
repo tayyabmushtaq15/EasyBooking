@@ -111,7 +111,7 @@ export default function SearchPage() {
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <header className="bg-white border-b">
-        <div className="container mx-auto px-4 py-4">
+        <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <Link href="/" className="inline-flex items-center text-blue-600 hover:text-blue-700">
               <ArrowLeft className="h-4 w-4 mr-2" />
@@ -125,10 +125,10 @@ export default function SearchPage() {
         </div>
       </header>
 
-      <div className="container mx-auto px-4 py-6">
+      <div className="max-w-7xl mx-auto px-4 py-10">
         {/* Search Header */}
-        <div className="mb-6">
-          <div className="flex items-center justify-between mb-4">
+        <div className="mb-10">
+          <div className="flex items-center justify-between mb-6">
             <div>
               <h1 className="text-2xl font-bold">Search Results</h1>
               <p className="text-gray-600">{properties.length} properties found</p>
@@ -166,12 +166,12 @@ export default function SearchPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
           {/* Filters Sidebar */}
           <div className="lg:col-span-1">
             <Card className="sticky top-6">
-              <CardContent className="p-6">
-                <div className="flex items-center mb-4">
+              <CardContent className="p-8">
+                <div className="flex items-center mb-6">
                   <Filter className="h-5 w-5 mr-2" />
                   <h2 className="text-lg font-semibold">Filters</h2>
                 </div>
@@ -257,7 +257,7 @@ export default function SearchPage() {
 
           {/* Results */}
           <div className="lg:col-span-3">
-            <div className={viewMode === "grid" ? "grid grid-cols-1 md:grid-cols-2 gap-6" : "space-y-4"}>
+            <div className={viewMode === "grid" ? "grid grid-cols-1 md:grid-cols-2 gap-8" : "space-y-6"}>
               {properties.map((property) => (
                 <Link key={property.id} href={`/property/${property.id}`}>
                   <Card
@@ -326,7 +326,7 @@ export default function SearchPage() {
             </div>
 
             {/* Pagination */}
-            <div className="flex justify-center mt-8">
+            <div className="flex justify-center mt-12">
               <div className="flex items-center space-x-2">
                 <Button variant="outline" disabled>
                   Previous

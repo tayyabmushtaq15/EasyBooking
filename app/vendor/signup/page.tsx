@@ -96,10 +96,10 @@ export default function VendorSignupPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="container mx-auto px-4 py-6 sm:py-8">
-        <div className="max-w-3xl mx-auto">
+      <div className="max-w-3xl mx-auto px-4 py-12">
+        <div className="w-full">
           {/* Progress Bar */}
-          <div className="mb-6 sm:mb-8">
+          <div className="mb-10">
             <div className="flex justify-between text-xs sm:text-sm text-gray-600 mb-2">
               <span>Personal Info</span>
               <span>Property Details</span>
@@ -111,15 +111,15 @@ export default function VendorSignupPage() {
 
           {/* Step 1: Personal Information */}
           {step === 1 && (
-            <Card className="bg-white border border-gray-200 shadow-sm">
-              <CardHeader className="pb-4 sm:pb-6">
-                <CardTitle className="text-xl sm:text-2xl text-gray-900">Personal Information</CardTitle>
-                <CardDescription className="text-sm sm:text-base">
+            <Card className="bg-white border border-gray-200 shadow-lg rounded-xl mb-10">
+              <CardHeader className="pb-6">
+                <CardTitle className="text-2xl text-gray-900">Personal Information</CardTitle>
+                <CardDescription className="text-base">
                   Tell us about yourself to get started as a host
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4 sm:space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <CardContent className="space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="firstName" className="text-sm font-medium">
                       First Name *
@@ -128,7 +128,7 @@ export default function VendorSignupPage() {
                       id="firstName"
                       value={formData.firstName}
                       onChange={(e) => handleInputChange("firstName", e.target.value)}
-                      className="h-10 sm:h-11"
+                      className="h-12 rounded-md"
                       required
                     />
                   </div>
@@ -140,7 +140,7 @@ export default function VendorSignupPage() {
                       id="lastName"
                       value={formData.lastName}
                       onChange={(e) => handleInputChange("lastName", e.target.value)}
-                      className="h-10 sm:h-11"
+                      className="h-12 rounded-md"
                       required
                     />
                   </div>
@@ -154,7 +154,7 @@ export default function VendorSignupPage() {
                     type="email"
                     value={formData.email}
                     onChange={(e) => handleInputChange("email", e.target.value)}
-                    className="h-10 sm:h-11"
+                    className="h-12 rounded-md"
                     placeholder="your.email@example.com"
                     required
                   />
@@ -168,7 +168,7 @@ export default function VendorSignupPage() {
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => handleInputChange("phone", e.target.value)}
-                    className="h-10 sm:h-11"
+                    className="h-12 rounded-md"
                     placeholder="+1 (555) 123-4567"
                     required
                   />
@@ -179,14 +179,14 @@ export default function VendorSignupPage() {
 
           {/* Step 2: Property Type & Details */}
           {step === 2 && (
-            <Card className="bg-white border border-gray-200 shadow-sm">
-              <CardHeader className="pb-4 sm:pb-6">
-                <CardTitle className="text-xl sm:text-2xl text-gray-900">Property Details</CardTitle>
-                <CardDescription className="text-sm sm:text-base">
+            <Card className="bg-white border border-gray-200 shadow-lg rounded-xl mb-10">
+              <CardHeader className="pb-6">
+                <CardTitle className="text-2xl text-gray-900">Property Details</CardTitle>
+                <CardDescription className="text-base">
                   What type of property are you listing?
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-6">
+              <CardContent className="space-y-8">
                 <div className="space-y-4">
                   <Label className="text-base font-medium">Property Type *</Label>
                   <RadioGroup
@@ -197,15 +197,15 @@ export default function VendorSignupPage() {
                     {propertyTypes.map((type) => (
                       <div
                         key={type.id}
-                        className="flex items-start space-x-3 p-3 sm:p-4 border rounded-lg hover:bg-gray-50 transition-colors"
+                        className="flex items-start space-x-3 p-4 border rounded-lg hover:bg-gray-50 transition-colors"
                       >
                         <RadioGroupItem value={type.id} id={type.id} className="mt-1" />
-                        <type.icon className="h-5 w-5 sm:h-6 sm:w-6 text-gray-600 mt-0.5 flex-shrink-0" />
+                        <type.icon className="h-6 w-6 text-gray-600 mt-0.5 flex-shrink-0" />
                         <div className="flex-1 min-w-0">
-                          <Label htmlFor={type.id} className="font-medium cursor-pointer text-sm sm:text-base">
+                          <Label htmlFor={type.id} className="font-medium cursor-pointer text-base">
                             {type.label}
                           </Label>
-                          <p className="text-xs sm:text-sm text-gray-600 mt-1">{type.description}</p>
+                          <p className="text-sm text-gray-600 mt-1">{type.description}</p>
                         </div>
                       </div>
                     ))}
@@ -221,7 +221,7 @@ export default function VendorSignupPage() {
                     placeholder="e.g., Cozy Downtown Apartment"
                     value={formData.propertyName}
                     onChange={(e) => handleInputChange("propertyName", e.target.value)}
-                    className="h-10 sm:h-11"
+                    className="h-12 rounded-md"
                     required
                   />
                 </div>
@@ -236,7 +236,7 @@ export default function VendorSignupPage() {
                     value={formData.description}
                     onChange={(e) => handleInputChange("description", e.target.value)}
                     rows={4}
-                    className="resize-none"
+                    className="resize-none rounded-md"
                   />
                   <p className="text-xs text-gray-500">Help guests understand what makes your place special</p>
                 </div>
@@ -246,14 +246,14 @@ export default function VendorSignupPage() {
 
           {/* Step 3: Location & Amenities */}
           {step === 3 && (
-            <Card className="bg-white border border-gray-200 shadow-sm">
-              <CardHeader className="pb-4 sm:pb-6">
-                <CardTitle className="text-xl sm:text-2xl text-gray-900">Location & Amenities</CardTitle>
-                <CardDescription className="text-sm sm:text-base">
+            <Card className="bg-white border border-gray-200 shadow-lg rounded-xl mb-10">
+              <CardHeader className="pb-6">
+                <CardTitle className="text-2xl text-gray-900">Location & Amenities</CardTitle>
+                <CardDescription className="text-base">
                   Where is your property located and what amenities do you offer?
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-6">
+              <CardContent className="space-y-8">
                 <div className="space-y-2">
                   <Label htmlFor="address" className="text-sm font-medium">
                     Street Address *
@@ -262,13 +262,13 @@ export default function VendorSignupPage() {
                     id="address"
                     value={formData.address}
                     onChange={(e) => handleInputChange("address", e.target.value)}
-                    className="h-10 sm:h-11"
+                    className="h-12 rounded-md"
                     placeholder="123 Main Street"
                     required
                   />
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="city" className="text-sm font-medium">
                       City *
@@ -277,7 +277,7 @@ export default function VendorSignupPage() {
                       id="city"
                       value={formData.city}
                       onChange={(e) => handleInputChange("city", e.target.value)}
-                      className="h-10 sm:h-11"
+                      className="h-12 rounded-md"
                       placeholder="New York"
                       required
                     />
@@ -290,14 +290,14 @@ export default function VendorSignupPage() {
                       id="state"
                       value={formData.state}
                       onChange={(e) => handleInputChange("state", e.target.value)}
-                      className="h-10 sm:h-11"
+                      className="h-12 rounded-md"
                       placeholder="NY"
                       required
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="zipCode" className="text-sm font-medium">
                       ZIP/Postal Code *
@@ -306,7 +306,7 @@ export default function VendorSignupPage() {
                       id="zipCode"
                       value={formData.zipCode}
                       onChange={(e) => handleInputChange("zipCode", e.target.value)}
-                      className="h-10 sm:h-11"
+                      className="h-12 rounded-md"
                       placeholder="10001"
                       required
                     />
@@ -316,7 +316,7 @@ export default function VendorSignupPage() {
                       Country *
                     </Label>
                     <Select value={formData.country} onValueChange={(value) => handleInputChange("country", value)}>
-                      <SelectTrigger className="h-10 sm:h-11">
+                      <SelectTrigger className="h-12 rounded-md">
                         <SelectValue placeholder="Select country" />
                       </SelectTrigger>
                       <SelectContent>
@@ -355,15 +355,15 @@ export default function VendorSignupPage() {
 
           {/* Step 4: Pricing & Legal */}
           {step === 4 && (
-            <Card className="bg-white border border-gray-200 shadow-sm">
-              <CardHeader className="pb-4 sm:pb-6">
-                <CardTitle className="text-xl sm:text-2xl text-gray-900">Pricing & Legal</CardTitle>
-                <CardDescription className="text-sm sm:text-base">
+            <Card className="bg-white border border-gray-200 shadow-lg rounded-xl mb-10">
+              <CardHeader className="pb-6">
+                <CardTitle className="text-2xl text-gray-900">Pricing & Legal</CardTitle>
+                <CardDescription className="text-base">
                   Set your pricing and agree to our terms
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <CardContent className="space-y-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="basePrice" className="text-sm font-medium">
                       Base Price per Night ($) *
@@ -374,7 +374,7 @@ export default function VendorSignupPage() {
                       placeholder="150"
                       value={formData.basePrice}
                       onChange={(e) => handleInputChange("basePrice", e.target.value)}
-                      className="h-10 sm:h-11"
+                      className="h-12 rounded-md"
                       required
                     />
                     <p className="text-xs text-gray-500">Your nightly rate before taxes and fees</p>
@@ -389,13 +389,13 @@ export default function VendorSignupPage() {
                       placeholder="50"
                       value={formData.cleaningFee}
                       onChange={(e) => handleInputChange("cleaningFee", e.target.value)}
-                      className="h-10 sm:h-11"
+                      className="h-12 rounded-md"
                     />
                     <p className="text-xs text-gray-500">One-time cleaning fee (optional)</p>
                   </div>
                 </div>
 
-                <div className="space-y-4 p-4 sm:p-6 bg-blue-50 rounded-lg border border-blue-200">
+                <div className="space-y-4 p-6 bg-blue-50 rounded-lg border border-blue-200">
                   <h3 className="font-medium text-gray-900 mb-4">Legal Agreements</h3>
 
                   <div className="flex items-start space-x-3">
@@ -446,19 +446,19 @@ export default function VendorSignupPage() {
           )}
 
           {/* Navigation Buttons */}
-          <div className="flex flex-col sm:flex-row justify-between gap-3 sm:gap-4 mt-6 sm:mt-8">
+          <div className="flex flex-col sm:flex-row justify-between gap-4 mt-10">
             <Button
               variant="outline"
               onClick={prevStep}
               disabled={step === 1}
-              className="order-2 sm:order-1 h-11 sm:h-12 px-6 bg-transparent"
+              className="order-2 sm:order-1 h-12 px-6 bg-transparent rounded-md"
             >
               <ArrowLeft className="h-4 w-4 mr-2" />
               Previous
             </Button>
 
             {step < totalSteps ? (
-              <Button onClick={nextStep} className="order-1 sm:order-2 bg-blue-600 hover:bg-blue-700 h-11 sm:h-12 px-6">
+              <Button onClick={nextStep} className="order-1 sm:order-2 bg-blue-600 hover:bg-blue-700 h-12 px-6 rounded-md">
                 Next Step
                 <ArrowRight className="h-4 w-4 ml-2" />
               </Button>
@@ -466,7 +466,7 @@ export default function VendorSignupPage() {
               <Button
                 onClick={handleSubmit}
                 disabled={!formData.agreeToTerms || !formData.agreeToHostGuarantee}
-                className="order-1 sm:order-2 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 h-11 sm:h-12 px-6 font-medium"
+                className="order-1 sm:order-2 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 h-12 px-6 font-medium rounded-md"
               >
                 Complete Registration
               </Button>
@@ -474,7 +474,7 @@ export default function VendorSignupPage() {
           </div>
 
           {/* Mobile Step Indicator */}
-          <div className="flex justify-center mt-6 sm:hidden">
+          <div className="flex justify-center mt-8 sm:hidden">
             <div className="flex space-x-2">
               {Array.from({ length: totalSteps }, (_, i) => (
                 <div key={i} className={`w-2 h-2 rounded-full ${i + 1 <= step ? "bg-blue-600" : "bg-gray-300"}`} />

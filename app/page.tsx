@@ -84,31 +84,28 @@ export default function HomePage() {
   ]
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       {/* Main Content */}
       {/* Hero Section */}
-      <section className="bg-blue-600 text-white py-8 sm:py-12 lg:py-16">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-6 sm:mb-8">
-            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 sm:mb-4">
-              Find deals for any season
-            </h1>
-            <p className="text-base sm:text-lg lg:text-xl opacity-90">From cozy bed & breakfasts to luxury hotels</p>
+      <section className="bg-blue-600 text-white py-12">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-10">
+            <h1 className="text-4xl md:text-6xl font-bold mb-3">Find your next stay</h1>
+            <p className="text-lg md:text-2xl opacity-90">Search low prices on hotels, homes and much more...</p>
           </div>
 
           {/* Search Form */}
-          <Card className="max-w-5xl mx-auto">
-            <CardContent className="p-4 sm:p-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-                <div className="relative sm:col-span-2 lg:col-span-1">
-                  <MapPin className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-                  <Input placeholder="Where are you going?" className="pl-10" />
+          <Card className="max-w-4xl mx-auto shadow-lg rounded-xl">
+            <CardContent className="p-6">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
+                <div className="relative col-span-1">
+                  <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+                  <Input placeholder="Where are you going?" className="pl-10 h-12 rounded-md" />
                 </div>
-
                 <Popover>
                   <PopoverTrigger asChild>
-                    <Button variant="outline" className="justify-start text-left font-normal h-10 bg-transparent">
-                      <Calendar className="mr-2 h-4 w-4 flex-shrink-0" />
+                    <Button variant="outline" className="justify-start text-left font-normal h-12 w-full bg-white text-gray-900 border rounded-md">
+                      <Calendar className="mr-2 h-5 w-5 flex-shrink-0" />
                       <span className="truncate">{checkIn ? checkIn.toLocaleDateString() : "Check-in"}</span>
                     </Button>
                   </PopoverTrigger>
@@ -116,11 +113,10 @@ export default function HomePage() {
                     <CalendarComponent mode="single" selected={checkIn} onSelect={setCheckIn} />
                   </PopoverContent>
                 </Popover>
-
                 <Popover>
                   <PopoverTrigger asChild>
-                    <Button variant="outline" className="justify-start text-left font-normal h-10 bg-transparent">
-                      <Calendar className="mr-2 h-4 w-4 flex-shrink-0" />
+                    <Button variant="outline" className="justify-start text-left font-normal h-12 w-full bg-white text-gray-900 border rounded-md">
+                      <Calendar className="mr-2 h-5 w-5 flex-shrink-0" />
                       <span className="truncate">{checkOut ? checkOut.toLocaleDateString() : "Check-out"}</span>
                     </Button>
                   </PopoverTrigger>
@@ -128,10 +124,9 @@ export default function HomePage() {
                     <CalendarComponent mode="single" selected={checkOut} onSelect={setCheckOut} />
                   </PopoverContent>
                 </Popover>
-
                 <Select>
-                  <SelectTrigger className="h-10">
-                    <Users className="mr-2 h-4 w-4 flex-shrink-0" />
+                  <SelectTrigger className="h-12 w-full rounded-md border">
+                    <Users className="mr-2 h-5 w-5 flex-shrink-0" />
                     <SelectValue placeholder="Guests & rooms" />
                   </SelectTrigger>
                   <SelectContent>
@@ -141,11 +136,10 @@ export default function HomePage() {
                   </SelectContent>
                 </Select>
               </div>
-
-              <div className="mt-4">
+              <div className="mt-6">
                 <Link href="/search">
-                  <Button className="w-full bg-blue-600 hover:bg-blue-700 h-12">
-                    <Search className="mr-2 h-4 w-4" />
+                  <Button className="w-full bg-blue-500 hover:bg-blue-700 h-12 text-lg rounded-md shadow-md">
+                    <Search className="mr-2 h-5 w-5" />
                     Search
                   </Button>
                 </Link>
@@ -156,10 +150,10 @@ export default function HomePage() {
       </section>
 
       {/* Offers Section */}
-      <section className="py-8 sm:py-12 lg:py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Offers</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+      <section className="py-12 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl font-bold mb-8">Offers</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <Card className="overflow-hidden">
               <div className="flex flex-col sm:flex-row">
                 <div className="flex-1 p-4 sm:p-6">
@@ -197,19 +191,19 @@ export default function HomePage() {
       </section>
 
       {/* Browse by Property Type */}
-      <section className="py-8 sm:py-12 lg:py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Browse by property type</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 lg:gap-6">
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl font-bold mb-8">Browse by property type</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
             {propertyTypes.map((type, index) => (
               <Link key={index} href={`/search?type=${type.title.toLowerCase()}`}>
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-full">
-                  <div className="relative h-20 sm:h-24 lg:h-32">
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-full flex flex-col justify-between rounded-xl">
+                  <div className="relative h-24 md:h-32">
                     <Image src={type.image || "/placeholder.svg"} alt={type.title} fill className="object-cover" />
                   </div>
-                  <CardContent className="p-2 sm:p-3 lg:p-4">
-                    <h3 className="font-semibold text-sm sm:text-base">{type.title}</h3>
-                    <p className="text-xs sm:text-sm text-gray-600">{type.count}</p>
+                  <CardContent className="p-4 flex flex-col items-center">
+                    <h3 className="font-semibold text-base text-center">{type.title}</h3>
+                    <p className="text-xs text-gray-600 text-center">{type.count}</p>
                   </CardContent>
                 </Card>
               </Link>
@@ -219,14 +213,14 @@ export default function HomePage() {
       </section>
 
       {/* Featured Properties */}
-      <section className="py-8 sm:py-12 lg:py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Featured Properties</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+      <section className="py-12 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl font-bold mb-8">Featured Properties</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredProperties.map((property) => (
               <Link key={property.id} href={`/property/${property.id}`}>
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-full">
-                  <div className="relative h-48 sm:h-52 lg:h-48">
+                <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer h-full flex flex-col rounded-xl">
+                  <div className="relative h-48">
                     <Image
                       src={property.image || "/placeholder.svg"}
                       alt={property.title}
@@ -237,15 +231,15 @@ export default function HomePage() {
                       <Heart className="h-4 w-4" />
                     </Button>
                   </div>
-                  <CardContent className="p-4">
+                  <CardContent className="p-4 flex flex-col flex-1 justify-between">
                     <div className="flex items-start justify-between mb-2">
-                      <h3 className="font-semibold text-base sm:text-lg flex-1 mr-2">{property.title}</h3>
+                      <h3 className="font-semibold text-base flex-1 mr-2">{property.title}</h3>
                       <div className="flex items-center flex-shrink-0">
                         <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                         <span className="ml-1 text-sm font-medium">{property.rating}</span>
                       </div>
                     </div>
-                    <p className="text-gray-600 mb-2 text-sm sm:text-base">{property.location}</p>
+                    <p className="text-gray-600 mb-2 text-sm">{property.location}</p>
                     <div className="flex flex-wrap gap-1 mb-3">
                       {property.amenities.slice(0, 3).map((amenity, index) => (
                         <Badge key={index} variant="secondary" className="text-xs">
@@ -255,7 +249,7 @@ export default function HomePage() {
                     </div>
                     <div className="flex items-center justify-between">
                       <div className="flex items-baseline">
-                        <span className="text-xl sm:text-2xl font-bold">${property.price}</span>
+                        <span className="text-xl font-bold">${property.price}</span>
                         <span className="text-sm text-gray-600 ml-1">per night</span>
                       </div>
                     </div>
@@ -269,9 +263,9 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8 sm:py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+      <footer className="bg-gray-900 text-white py-12 mt-12">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="sm:col-span-2 lg:col-span-1">
               <h3 className="text-lg font-semibold mb-4">EasyBooking</h3>
               <p className="text-gray-400 text-sm sm:text-base">
@@ -339,8 +333,8 @@ export default function HomePage() {
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-800 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center text-gray-400 text-sm">
-            <p>&copy; 2024 EasyBooking. All rights reserved.</p>
+          <div className="border-t border-gray-800 mt-8 pt-6 text-center text-gray-400 text-sm">
+            <p>&copy; 2025 EasyBooking. All rights reserved.</p>
           </div>
         </div>
       </footer>

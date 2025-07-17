@@ -19,7 +19,7 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6">
-            <Link href="/stays" className="hover:underline transition-all font-bold">
+            <Link href="/" className="hover:underline transition-all font-bold">
               Stays
             </Link>
             {/* <Link href="/experiences" className="hover:underline transition-all font-bold">
